@@ -1,12 +1,15 @@
+require('appmetrics-dash').attach();
+require('appmetrics-prometheus').attach();
 
 const express = require('express');
 const app = express();
-const server = require('http').createServer(app);
+const port = 3000;
+app.set('view engine','ejs');
+app.set('views',__dirname + '/public');
+app.get('/',(req,res) => 
+	res.render('index'));
+var server = app.listen(port);
 const io = require('socket.io')(server);
-const port = process.env.PORT || 3000;
-
-app.use(express.static(__dirname + '/public'));
-
 io.on('connect', onConnect);
 server.listen(port, () => console.log('server listening on port ' + port));
 

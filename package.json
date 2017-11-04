@@ -5,7 +5,10 @@
   "author": "Damien Arrachequesne",
   "license": "MIT",
   "dependencies": {
-    "express": "4.13.4",
+    "appmetrics-dash": "^3.3.6",
+    "appmetrics-prometheus": "^1.0.1",
+    "ejs": "^2.5.7",
+    "express": "latest",
     "socket.io": "latest",
     "socket.io-client": "latest"
   },
